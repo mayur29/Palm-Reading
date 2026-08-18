@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateObject } from "ai";
-import { anthropic } from "@ai-sdk/anthropic";
+import { google } from "@ai-sdk/google";
 import { palmAnalysisSchema } from "@/lib/palmAnalysisSchema";
 
-const VISION_MODEL = process.env.PALMORA_VISION_MODEL ?? "claude-sonnet-4-5";
+const VISION_MODEL = process.env.PALMORA_VISION_MODEL ?? "gemini-3.6-flash";
 const CONFIDENCE_THRESHOLD = 0.5;
 
 const ANALYSIS_PROMPT = `You are an expert in Indian palmistry (Hasta Samudrika Shastra). Look closely at the photo of a human palm and extract a structured, purely observational analysis of the visible lines, mounts, and hand shape.
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
 
   const attempt = async () => {
     return generateObject({
-      model: anthropic(VISION_MODEL),
+      model: google(VISION_MODEL),
       schema: palmAnalysisSchema,
       messages: [
         {

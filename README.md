@@ -21,14 +21,15 @@ Open [http://localhost:3000](http://localhost:3000).
 Create a `.env.local` file (never commit it):
 
 ```bash
-# Required for the AI palm-photo analysis (/api/scan/analyze).
+# Required for the AI palm-photo analysis (/api/scan/analyze), via Google's Gemini API.
+# Get a free key at https://aistudio.google.com/app/apikey
 # Without this set, photo analysis always gracefully falls back to the guided quiz —
 # the app still works end-to-end, just without the vision step.
-ANTHROPIC_API_KEY=sk-ant-...
+GOOGLE_GENERATIVE_AI_API_KEY=...
 
 # Optional: override the vision-capable model used for palm analysis.
-# Defaults to "claude-sonnet-4-5".
-PALMORA_VISION_MODEL=claude-sonnet-4-5
+# Defaults to "gemini-3.6-flash".
+PALMORA_VISION_MODEL=gemini-3.6-flash
 ```
 
 ## Data & privacy
@@ -71,8 +72,8 @@ Next.js app:
 
 1. Push this repo to GitHub/GitLab/Bitbucket and import it in Vercel, **or** run
    `npx vercel` from this directory.
-2. Add the `ANTHROPIC_API_KEY` environment variable in the Vercel project settings
-   (Settings → Environment Variables). `PALMORA_VISION_MODEL` is optional.
+2. Add the `GOOGLE_GENERATIVE_AI_API_KEY` environment variable in the Vercel project
+   settings (Settings → Environment Variables). `PALMORA_VISION_MODEL` is optional.
 3. Because Vercel's serverless filesystem is ephemeral, the default JSON-file store
    (`data/db.json`) will reset on every deploy. For a real gift you have two options:
    - Simplest: deploy once, don't redeploy after onboarding — fine for a single gift

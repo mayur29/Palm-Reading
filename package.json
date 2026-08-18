@@ -10,7 +10,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "^4.0.39",
+    "@ai-sdk/google": "^4.0.44",
     "ai": "^7.0.66",
     "framer-motion": "^13.1.0",
     "html-to-image": "^1.11.13",
