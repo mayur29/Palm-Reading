@@ -31,9 +31,6 @@ export default function WelcomePage() {
         <Image src="/icon.svg" alt="Palmora" width={96} height={96} className="rounded-3xl shadow-lg" priority />
         <h1 className="font-display text-4xl italic text-plum">Palmora</h1>
         <p className="max-w-xs text-plum/70">{t("welcome.tagline")}</p>
-        <p className="max-w-sm rounded-2xl bg-plum/5 px-5 py-4 text-sm leading-relaxed text-plum/80">
-          {t("welcome.dedication")}
-        </p>
       </div>
 
       <Link
