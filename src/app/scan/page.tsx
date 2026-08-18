@@ -16,6 +16,7 @@ export default function ScanPage() {
 
   const [state, setState] = useState<ScanState>("idle");
   const [capturedImage, setCapturedImage] = useState<string | null>(null);
+  const [debugInfo, setDebugInfo] = useState<string>("");
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -37,15 +38,33 @@ export default function ScanPage() {
       });
       streamRef.current = stream;
       setState("camera");
+      const track = stream.getVideoTracks()[0];
+      setDebugInfo(
+        `track: enabled=${track?.enabled} muted=${track?.muted} readyState=${track?.readyState} settings=${JSON.stringify(track?.getSettings())}`,
+      );
       requestAnimationFrame(() => {
         const video = videoRef.current;
         if (!video) return;
         video.srcObject = stream;
         video.onloadedmetadata = () => {
-          video.play().catch(() => setState("error"));
+          video
+            .play()
+            .then(() => setDebugInfo((prev) => `${prev} | play() resolved, videoWidth=${video.videoWidth}`))
+            .catch((err) => {
+              setDebugInfo((prev) => `${prev} | play() rejected: ${err}`);
+              setState("error");
+            });
         };
+        video.onerror = () => setDebugInfo((prev) => `${prev} | video element error: ${video.error?.message}`);
+        setTimeout(() => {
+          setDebugInfo(
+            (prev) =>
+              `${prev} | after 3s: paused=${video.paused} readyState=${video.readyState} videoWidth=${video.videoWidth} trackReadyState=${track?.readyState}`,
+          );
+        }, 3000);
       });
-    } catch {
+    } catch (err) {
+      setDebugInfo(`getUserMedia failed: ${err}`);
       setState("error");
     }
   };
@@ -141,6 +160,9 @@ export default function ScanPage() {
             <div className="pointer-events-none absolute inset-6 rounded-3xl border-4 border-dashed border-marigold" />
           </div>
           <p className="text-center text-sm text-plum/70">{t("scan.guideHint")}</p>
+          {debugInfo && (
+            <p className="max-w-xs break-words text-center text-xs text-plum/50">{debugInfo}</p>
+          )}
           <button
             onClick={capturePhoto}
             className="w-full rounded-full bg-coral py-4 font-semibold text-cream shadow-md shadow-coral/30"
@@ -182,6 +204,9 @@ export default function ScanPage() {
       {state === "error" && (
         <div className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
           <p className="max-w-xs text-plum/70">{t("scan.cameraDenied")}</p>
+          {debugInfo && (
+            <p className="max-w-xs break-words text-center text-xs text-plum/50">{debugInfo}</p>
+          )}
           <button
             onClick={() => fileInputRef.current?.click()}
             className="w-full rounded-full bg-coral py-4 font-semibold text-cream shadow-md shadow-coral/30"
