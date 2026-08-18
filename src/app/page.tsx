@@ -12,7 +12,7 @@ export default function WelcomePage() {
   const ctaHref = !loading && profile ? "/today" : "/onboarding";
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between px-6 py-12 text-center">
+    <div className="flex min-h-dvh flex-col items-center justify-between px-6 py-12 text-center">
       <div className="flex w-full justify-end gap-2">
         {(["de", "en"] as Locale[]).map((l) => (
           <button

@@ -10,7 +10,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const showNav = !NO_NAV_ROUTES.includes(pathname);
 
   return (
-    <div className="mx-auto min-h-screen max-w-[480px]">
+    <div className="mx-auto min-h-dvh max-w-[480px]">
       <main className={showNav ? "pb-20" : undefined}>{children}</main>
       {showNav && <BottomNav />}
     </div>

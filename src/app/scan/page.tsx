@@ -100,7 +100,7 @@ export default function ScanPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col px-6 py-10">
+    <div className="flex min-h-dvh flex-col px-6 py-10">
       <h1 className="mb-6 font-display text-3xl text-plum">{t("scan.title")}</h1>
 
       {state === "idle" && (

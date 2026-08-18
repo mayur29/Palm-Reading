@@ -66,7 +66,7 @@ export default function OnboardingPage() {
   const goBack = () => setStepIndex((i) => Math.max(0, i - 1));
 
   return (
-    <div className="flex min-h-screen flex-col justify-between px-6 py-10">
+    <div className="flex min-h-dvh flex-col justify-between px-6 py-10">
       <div>
         <div className="mb-8 flex gap-1.5">
           {STEPS.map((s, i) => (
