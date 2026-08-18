@@ -27,6 +27,38 @@ export default function ScanPage() {
     };
   }, []);
 
+  useEffect(() => {
+    if (state !== "camera") return;
+    const stream = streamRef.current;
+    const video = videoRef.current;
+    if (!stream || !video) {
+      setDebugInfo((prev) => `${prev} | effect ran but stream=${!!stream} video=${!!video}`);
+      return;
+    }
+    const track = stream.getVideoTracks()[0];
+    video.srcObject = stream;
+
+    const attemptPlay = (source: string) => {
+      video
+        .play()
+        .then(() => setDebugInfo((prev) => `${prev} | play() resolved via ${source}, videoWidth=${video.videoWidth}`))
+        .catch((err) => setDebugInfo((prev) => `${prev} | play() rejected via ${source}: ${err}`));
+    };
+
+    video.onloadedmetadata = () => attemptPlay("loadedmetadata");
+    video.oncanplay = () => attemptPlay("canplay");
+    video.onerror = () => setDebugInfo((prev) => `${prev} | video element error: ${video.error?.message}`);
+    attemptPlay("immediate");
+
+    const timeout = setTimeout(() => {
+      setDebugInfo(
+        (prev) =>
+          `${prev} | after 3s: paused=${video.paused} readyState=${video.readyState} videoWidth=${video.videoWidth} trackReadyState=${track?.readyState}`,
+      );
+    }, 3000);
+    return () => clearTimeout(timeout);
+  }, [state]);
+
   const startCamera = async () => {
     if (!navigator.onLine) {
       setState("offline");
@@ -37,32 +69,11 @@ export default function ScanPage() {
         video: { facingMode: "environment" },
       });
       streamRef.current = stream;
-      setState("camera");
       const track = stream.getVideoTracks()[0];
       setDebugInfo(
         `track: enabled=${track?.enabled} muted=${track?.muted} readyState=${track?.readyState} settings=${JSON.stringify(track?.getSettings())}`,
       );
-      requestAnimationFrame(() => {
-        const video = videoRef.current;
-        if (!video) return;
-        video.srcObject = stream;
-        video.onloadedmetadata = () => {
-          video
-            .play()
-            .then(() => setDebugInfo((prev) => `${prev} | play() resolved, videoWidth=${video.videoWidth}`))
-            .catch((err) => {
-              setDebugInfo((prev) => `${prev} | play() rejected: ${err}`);
-              setState("error");
-            });
-        };
-        video.onerror = () => setDebugInfo((prev) => `${prev} | video element error: ${video.error?.message}`);
-        setTimeout(() => {
-          setDebugInfo(
-            (prev) =>
-              `${prev} | after 3s: paused=${video.paused} readyState=${video.readyState} videoWidth=${video.videoWidth} trackReadyState=${track?.readyState}`,
-          );
-        }, 3000);
-      });
+      setState("camera");
     } catch (err) {
       setDebugInfo(`getUserMedia failed: ${err}`);
       setState("error");
