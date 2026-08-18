@@ -1,0 +1,24 @@
+{
+  "name": "Palmora — A Palm Reading, Just for You",
+  "short_name": "Palmora",
+  "description": "A personalized palm reading gift blending Indian palmistry with numerology.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8ec",
+  "theme_color": "#f4a21c",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

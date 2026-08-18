@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local JSON store (contains the profile's personal data)
+/data/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

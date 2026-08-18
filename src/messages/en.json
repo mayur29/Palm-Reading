@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "today": "Today",
+    "reading": "My Reading",
+    "scan": "Scan",
+    "settings": "Settings"
+  },
+  "welcome": {
+    "dedication": "Made for you, with love — may these lines tell you what I already know.",
+    "cta": "Begin",
+    "tagline": "A palm reading, just for you"
+  },
+  "onboarding": {
+    "title": "Let's get to know you",
+    "nameLabel": "Your name",
+    "namePlaceholder": "What should we call you?",
+    "birthDateTitle": "When were you born?",
+    "dayLabel": "Day",
+    "monthLabel": "Month",
+    "yearLabel": "Year (optional)",
+    "yearHint": "Don't know the exact year? That's okay — skip it.",
+    "toneTitle": "How should your readings feel?",
+    "toneSpiritual": "Traditional & spiritual",
+    "toneSpiritualHint": "Rooted in ancient palmistry wisdom",
+    "tonePlayful": "Fun & playful",
+    "tonePlayfulHint": "Light-hearted and full of charm",
+    "languageTitle": "Choose your language",
+    "continue": "Continue",
+    "back": "Back",
+    "finish": "Start my reading"
+  },
+  "scan": {
+    "title": "Scan your palm",
+    "guideHint": "Place your open palm inside the outline, in good light",
+    "capture": "Take photo",
+    "upload": "Upload a photo instead",
+    "retake": "Retake",
+    "analyzing": "Reading your lines...",
+    "analyzingHint": "The lines of your hand are ancient storytellers. Give us a moment.",
+    "lowConfidenceTitle": "We couldn't quite see your lines clearly",
+    "lowConfidenceBody": "No worries — let's find them together with a few quick questions.",
+    "quizStart": "Start the quiz",
+    "cameraDenied": "Camera access was denied. You can upload a photo instead.",
+    "offline": "You're offline. Please reconnect to analyze your palm."
+  },
+  "quiz": {
+    "title": "Which one looks like yours?",
+    "next": "Next",
+    "finish": "See my reading",
+    "length": {
+      "short": "Short",
+      "medium": "Medium",
+      "long": "Long"
+    },
+    "curvature": {
+      "straight": "Straight",
+      "slightly_curved": "Slightly curved",
+      "curved": "Curved"
+    },
+    "fatePresent": {
+      "true": "Yes, I see one",
+      "false": "No / not sure"
+    },
+    "handShape": {
+      "earth": "Square palm, short fingers (Earth)",
+      "air": "Square palm, long fingers (Air)",
+      "fire": "Long palm, short fingers (Fire)",
+      "water": "Long palm, long fingers (Water)"
+    }
+  },
+  "reading": {
+    "title": "Your Reading",
+    "toneToggle": "Tone",
+    "share": "Save as image",
+    "sections": {
+      "personality": "Personality Core",
+      "heart": "Heart & Relationships",
+      "mind": "Mind & Talents",
+      "career": "Career & Path",
+      "vitality": "Vitality & Energy",
+      "numbers": "Your Numbers",
+      "note": "A Personal Note"
+    },
+    "rescan": "Re-scan my palm"
+  },
+  "today": {
+    "title": "Today's Insight",
+    "streak": "day streak",
+    "streakOne": "day streak",
+    "comeBack": "Come back tomorrow for your next insight"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "tone": "Reading tone",
+    "name": "Name",
+    "birthDate": "Birth date",
+    "photoConsent": "Keep a small thumbnail of my palm photo",
+    "photoConsentHint": "Off by default. Your photo is never stored unless you turn this on.",
+    "rescan": "Re-scan my palm",
+    "save": "Save changes",
+    "saved": "Saved!"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "de": "German",
+    "en": "English"
+  }
+}

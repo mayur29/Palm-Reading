@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "today": "Heute",
+    "reading": "Meine Lesung",
+    "scan": "Scannen",
+    "settings": "Einstellungen"
+  },
+  "welcome": {
+    "dedication": "Für dich gemacht, mit Liebe — mögen diese Linien dir sagen, was ich schon weiß.",
+    "cta": "Los geht's",
+    "tagline": "Eine Handlesung, nur für dich"
+  },
+  "onboarding": {
+    "title": "Lass uns dich kennenlernen",
+    "nameLabel": "Dein Name",
+    "namePlaceholder": "Wie sollen wir dich nennen?",
+    "birthDateTitle": "Wann bist du geboren?",
+    "dayLabel": "Tag",
+    "monthLabel": "Monat",
+    "yearLabel": "Jahr (optional)",
+    "yearHint": "Kennst du das genaue Jahr nicht? Kein Problem — einfach überspringen.",
+    "toneTitle": "Wie sollen sich deine Lesungen anfühlen?",
+    "toneSpiritual": "Traditionell & spirituell",
+    "toneSpiritualHint": "Verwurzelt in alter Handlese-Weisheit",
+    "tonePlayful": "Verspielt & unterhaltsam",
+    "tonePlayfulHint": "Leicht, charmant und mit einem Augenzwinkern",
+    "languageTitle": "Wähle deine Sprache",
+    "continue": "Weiter",
+    "back": "Zurück",
+    "finish": "Meine Lesung starten"
+  },
+  "scan": {
+    "title": "Scanne deine Hand",
+    "guideHint": "Lege deine offene Hand in die Umrisslinie, bei gutem Licht",
+    "capture": "Foto aufnehmen",
+    "upload": "Stattdessen ein Foto hochladen",
+    "retake": "Neu aufnehmen",
+    "analyzing": "Deine Linien werden gelesen...",
+    "analyzingHint": "Die Linien deiner Hand sind uralte Geschichtenerzähler. Gib uns einen Moment.",
+    "lowConfidenceTitle": "Wir konnten deine Linien nicht ganz klar erkennen",
+    "lowConfidenceBody": "Kein Problem — lass uns sie gemeinsam mit ein paar kurzen Fragen finden.",
+    "quizStart": "Quiz starten",
+    "cameraDenied": "Der Kamerazugriff wurde verweigert. Du kannst stattdessen ein Foto hochladen.",
+    "offline": "Du bist offline. Bitte verbinde dich erneut, um deine Hand zu analysieren."
+  },
+  "quiz": {
+    "title": "Welche sieht wie deine aus?",
+    "next": "Weiter",
+    "finish": "Meine Lesung ansehen",
+    "length": {
+      "short": "Kurz",
+      "medium": "Mittel",
+      "long": "Lang"
+    },
+    "curvature": {
+      "straight": "Gerade",
+      "slightly_curved": "Leicht geschwungen",
+      "curved": "Stark geschwungen"
+    },
+    "fatePresent": {
+      "true": "Ja, ich sehe eine",
+      "false": "Nein / nicht sicher"
+    },
+    "handShape": {
+      "earth": "Quadratische Handfläche, kurze Finger (Erde)",
+      "air": "Quadratische Handfläche, lange Finger (Luft)",
+      "fire": "Lange Handfläche, kurze Finger (Feuer)",
+      "water": "Lange Handfläche, lange Finger (Wasser)"
+    }
+  },
+  "reading": {
+    "title": "Deine Lesung",
+    "toneToggle": "Tonfall",
+    "share": "Als Bild speichern",
+    "sections": {
+      "personality": "Persönlichkeitskern",
+      "heart": "Herz & Beziehungen",
+      "mind": "Geist & Talente",
+      "career": "Karriere & Weg",
+      "vitality": "Vitalität & Energie",
+      "numbers": "Deine Zahlen",
+      "note": "Eine persönliche Notiz"
+    },
+    "rescan": "Meine Hand neu scannen"
+  },
+  "today": {
+    "title": "Deine heutige Erkenntnis",
+    "streak": "Tage in Folge",
+    "streakOne": "Tag in Folge",
+    "comeBack": "Komm morgen wieder für deine nächste Erkenntnis"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "tone": "Tonfall der Lesung",
+    "name": "Name",
+    "birthDate": "Geburtsdatum",
+    "photoConsent": "Ein kleines Vorschaubild meines Handfotos behalten",
+    "photoConsentHint": "Standardmäßig aus. Dein Foto wird nie gespeichert, außer du aktivierst dies.",
+    "rescan": "Meine Hand neu scannen",
+    "save": "Änderungen speichern",
+    "saved": "Gespeichert!"
+  },
+  "common": {
+    "loading": "Wird geladen...",
+    "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+    "de": "Deutsch",
+    "en": "Englisch"
+  }
+}
