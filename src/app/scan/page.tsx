@@ -38,7 +38,12 @@ export default function ScanPage() {
       streamRef.current = stream;
       setState("camera");
       requestAnimationFrame(() => {
-        if (videoRef.current) videoRef.current.srcObject = stream;
+        const video = videoRef.current;
+        if (!video) return;
+        video.srcObject = stream;
+        video.onloadedmetadata = () => {
+          video.play().catch(() => setState("error"));
+        };
       });
     } catch {
       setState("error");
